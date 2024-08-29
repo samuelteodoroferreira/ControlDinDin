@@ -12,7 +12,6 @@
         android:layout_marginTop="48dp"
         android:text="Minhas Contas"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/rv_relario"
         app:layout_constraintTop_toTopOf="parent"

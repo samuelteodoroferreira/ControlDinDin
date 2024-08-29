@@ -53,13 +53,13 @@
             tools:ignore="VisualLintTextFieldSize" />
 
         <EditText
-            android:id="@+id/editTextDate"
+            android:id="@+id/ed_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:focusable="false"
             android:hint="@string/et_date"
-            android:inputType="none"
+            android:inputType="date"
             android:minHeight="48dp"
             android:textColorHint="#546E7A"
             tools:ignore="TextFields,VisualLintTextFieldSize" />

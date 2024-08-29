@@ -1,5 +1,6 @@
 package com.versao1.controledindin
 
+import android.app.DatePickerDialog
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
@@ -8,6 +9,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import com.versao1.controledindin.databinding.ActivityMainBinding
+import java.util.Calendar
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,29 +29,26 @@ class MainActivity : AppCompatActivity() {
         // Configura os Spinners
         setupSpinners()
 
-        // Configura os botões
+        // Configura os botões para adicionar salvamento no banco
         setButtonListener()
+
+        // Configura o DatePicker
+        setupDatePicker()
     }
 
     private fun setupSpinners() {
-        // Configurar o primeiro Spinner (Crédito/Débito)
         val tipos = resources.getStringArray(R.array.tipo)
         val tipoAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, tipos)
         tipoAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spTipo.adapter = tipoAdapter
 
-        // Configurar o comportamento do Spinner de tipo
         binding.spTipo.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                 val selectedTipo = parent.getItemAtPosition(position).toString()
-
-                // Atualizar o segundo Spinner baseado na seleção
                 updateDetalheSpinner(selectedTipo)
             }
 
-            override fun onNothingSelected(parent: AdapterView<*>) {
-                // Do nothing
-            }
+            override fun onNothingSelected(parent: AdapterView<*>) {}
         }
     }
 
@@ -57,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         val detalheArray = when (tipo) {
             "Crédito" -> R.array.detalhe
             "Débito" -> R.array.sp_debito
-            else -> R.array.detalhe // fallback para evitar erro
+            else -> R.array.detalhe
         }
 
         val detalheAdapter = ArrayAdapter.createFromResource(
@@ -71,25 +70,42 @@ class MainActivity : AppCompatActivity() {
 
     private fun setButtonListener() {
         binding.btLancar.setOnClickListener {
-            // Lógica para lançar uma nova entrada no banco de dados
             val tipo = binding.spTipo.selectedItem.toString()
             val detalhe = binding.spDetalhe.selectedItem.toString()
-            val valor = binding.tvValor.text.toString().toDouble()
-            val data = binding.editTextDate.text.toString()
+            val data = binding.edDate.text.toString()  // Corrigido aqui
+            val valorStr = binding.tvValor.text.toString()
 
-            // Insere os dados na tabela 'cadastro'
-            banco.execSQL("INSERT INTO cadastro (tipo, detalhe, valor, data) VALUES (?, ?, ?, ?)",
-                arrayOf(tipo, detalhe, valor, data))
+            banco.execSQL(
+                "INSERT INTO cadastro (tipo, detalhe, valor, data) VALUES (ano, mes, dia, null)",
+                arrayOf(tipo, detalhe, valorStr, data)
+            )
         }
 
         binding.buttonVerLancamentos.setOnClickListener {
             val intent = Intent(this, ListaActivity::class.java)
             startActivity(intent)
         }
+    }
 
-       /* binding.buttonSaldo.setOnClickListener {
-            val intent = Intent(this, SaldoActivity::class.java)
-            startActivity(intent)
-        }*/
+    private fun setupDatePicker() {
+        binding.edDate.setOnClickListener {
+            val calendario = Calendar.getInstance()
+            val ano = calendario.get(Calendar.YEAR)
+            val mes = calendario.get(Calendar.MONTH)
+            val dia = calendario.get(Calendar.DAY_OF_MONTH)
+
+            val datePickerDialog = DatePickerDialog(
+                this,
+                { _, selectedYear, selectedMonth, selectedDay ->
+                    val selectedDate = "$selectedDay/${selectedMonth + 1}/$selectedYear"
+                    binding.edDate.setText(selectedDate)
+                },
+                ano,
+                mes,
+                dia
+            )
+
+            datePickerDialog.show()
+        }
     }
 }
