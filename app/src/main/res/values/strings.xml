@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">ControlDinDin</string>
+
+    <string name="detalhe_entrada_sa_da">Detalhe da entrada ou saída</string>
+
+    <string name="tipo_de_despesa">Tipo de despesa</string>
+    <string name="bt_lancar">Lançar</string>
+    <string name="bt_saldo">Saldo</string>
+    <string name="bt_consultar">Consultar</string>
+    <string name="et_date">Selecione a data</string>
+    <string name="tv_detalhe">Tipo de Entrada/Saída</string>
+    <string name="tv_deb_cred">Selecione Débito ou Crédito</string>
+    <string name="digite_o_valor">Digite o Valor</string>
+
+    <string-array name="detalhe">
+        <item>Salário</item>
+        <item>Extras</item>
+    </string-array>
+
+    <string-array name="tipo">
+        <item>Crédito</item>
+        <item>Débito</item>
+    </string-array>
+
+    <string-array name="sp_debito">
+        <item>Alimentação</item>
+        <item>Transporte</item>
+        <item>Saúde</item>
+        <item>Moradia</item>
+    </string-array>
+
+</resources>
