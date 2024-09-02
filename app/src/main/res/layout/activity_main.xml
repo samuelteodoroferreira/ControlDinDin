@@ -87,5 +87,14 @@
             android:padding="16dp"
             android:text="@string/bt_saldo"
             tools:ignore="VisualLintButtonSize" />
+
+        <TextView
+            android:id="@+id/tv_saldo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Saldo Atual: R$ 0,00"
+            android:textSize="16sp"
+            android:textColor="@android:color/black" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
