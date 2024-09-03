@@ -3,25 +3,59 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/iv_delete_item"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:contentDescription="Excluir item"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_data_item"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_nome_item"
+        tools:ignore="HardcodedText,VisualLintBounds" />
 
     <TextView
-        android:id="@+id/tv_relatorio"
-        android:layout_width="173dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="48dp"
-        android:text="Minhas Contas"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/rv_relario"
+        android:id="@+id/tv_nome_item"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Nome do Item"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toEndOf="@id/iv_delete_item"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv_data_item"
+        tools:ignore="HardcodedText,VisualLintOverlap,VisualLintBounds" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_relario"
-        android:layout_width="409dp"
-        android:layout_height="650dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="99dp"
-        tools:ignore="MissingConstraints" />
+    <!-- Valor do item -->
+    <TextView
+        android:id="@+id/tv_valor_item"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Valor do Item"
+        android:textColor="#546E7A"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_delete_item"
+        app:layout_constraintTop_toBottomOf="@id/tv_nome_item"
+        tools:ignore="HardcodedText,VisualLintBounds" />
+
+    <!-- Data de lançamento -->
+    <TextView
+        android:id="@+id/tv_data_item"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Data de Lançamento"
+        android:textColor="#546E7A"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/iv_delete_item"
+        app:layout_constraintTop_toBottomOf="@id/tv_valor_item"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="HardcodedText" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

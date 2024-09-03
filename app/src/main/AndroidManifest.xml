@@ -21,6 +21,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Declaração da ListaActivity -->
+        <activity
+            android:name=".ListaActivity"
+            android:exported="true" />
+
     </application>
 
 </manifest>
