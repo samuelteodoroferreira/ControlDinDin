@@ -5,7 +5,6 @@
     android:orientation="vertical"
     android:background="@color/white">
 
-    <!-- Logotipo ou imagem central -->
     <ImageView
         android:id="@+id/splash_logo"
         android:layout_width="wrap_content"
@@ -13,7 +12,7 @@
         android:src="@drawable/meu_logo"
         android:contentDescription="@string/splash_logo_desc"/>
 
-    <!-- Nome do app ou texto abaixo do logotipo -->
+
     <TextView
         android:id="@+id/splash_text"
         android:layout_width="wrap_content"
