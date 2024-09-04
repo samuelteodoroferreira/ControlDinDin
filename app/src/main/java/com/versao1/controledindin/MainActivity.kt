@@ -190,6 +190,7 @@ class MainActivity : AppCompatActivity() {
             launch(Dispatchers.Main) {
                 val mensagem = String.format("Saldo Atual: R$ %.2f", saldo)
                 Toast.makeText(this@MainActivity, mensagem, Toast.LENGTH_LONG).show()
+                binding.tvSaldo.text = mensagem
             }
         }
     }
