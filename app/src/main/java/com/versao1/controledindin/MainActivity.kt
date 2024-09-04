@@ -1,5 +1,6 @@
 package com.versao1.controledindin
 
+import android.R.layout.simple_spinner_dropdown_item
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
@@ -48,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         // Carrega os tipos a partir dos recursos
         val tipos = resources.getStringArray(R.array.tipo)
         val tipoAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, tipos)
-        tipoAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        tipoAdapter.setDropDownViewResource(simple_spinner_dropdown_item)
         binding.spTipo.adapter = tipoAdapter
 
         // Listener para quando o usuário seleciona um tipo
@@ -77,7 +78,7 @@ class MainActivity : AppCompatActivity() {
             detalheArray,
             android.R.layout.simple_spinner_item
         )
-        detalheAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        detalheAdapter.setDropDownViewResource(simple_spinner_dropdown_item)
         binding.spDetalhe.adapter = detalheAdapter
     }
 

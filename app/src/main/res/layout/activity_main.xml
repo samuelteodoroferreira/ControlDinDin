@@ -93,8 +93,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:foregroundGravity="center|fill"
             android:text="@string/saldo_atual"
-            android:textSize="16sp"
-            android:textColor="@android:color/black" />
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

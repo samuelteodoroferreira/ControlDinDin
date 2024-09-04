@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.versao1.controledindin.RecyclerView.LancamentoAdapter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
