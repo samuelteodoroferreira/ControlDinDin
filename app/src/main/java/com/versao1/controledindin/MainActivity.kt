@@ -134,12 +134,12 @@ class MainActivity : AppCompatActivity() {
                         arrayOf(tipo, detalhe, valor, data)
                     )
                     launch(Dispatchers.Main) {
-                        Toast.makeText(this@MainActivity, "Lançamento realizado com sucesso!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@MainActivity, "Lançamento realizado com sucesso!", Toast.LENGTH_LONG).show()
                     }
                 }
             } else {
                 // Mostra um aviso se o valor for inválido
-                Toast.makeText(this, "Valor inválido!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Valor inválido!", Toast.LENGTH_LONG).show()
             }
         }
 

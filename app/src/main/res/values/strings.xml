@@ -12,6 +12,7 @@
     <string name="tv_deb_cred">Selecione Débito ou Crédito</string>
     <string name="digite_o_valor">Digite o Valor</string>
     <string name="saldo_atual">Saldo Atual: R$ 0,00</string>
+    <string name="splash_logo_desc">splash_logo_desc</string>
 
     <string-array name="detalhe">
         <item>Salário</item>
