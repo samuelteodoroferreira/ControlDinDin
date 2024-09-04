@@ -10,3 +10,7 @@ Ciclo de vida de uma activity
 banco de dados SQLite nativo do Android Studio
 Firebase (Não implementado nesse projeto ainda)
 Implementação do padrão MVC
+
+
+Uploading AppControlDinDin.mp4…
+
