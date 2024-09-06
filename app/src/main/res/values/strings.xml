@@ -15,6 +15,8 @@
     <string name="splash_logo_desc">splash_logo_desc</string>
     <string name="voltar">Voltar</string>
     <string name="LançarNovo">Lançar Novo</string>
+    <string name="excluir_lancamento">bnt_excluir</string>
+    <string name="id_stringvoltar">+id/stringVoltar</string>
 
     <string-array name="detalhe">
         <item>Salário</item>
